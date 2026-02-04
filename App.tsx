@@ -16,8 +16,8 @@ const Button = ({
 }) => {
   const baseClasses = "inline-flex items-center justify-center px-6 py-3 rounded-full font-bold transition-all duration-300 text-base min-w-[12em] cursor-pointer";
   const variants = {
-    solid: "bg-brand-pink text-white hover:bg-[#d93695] hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 shadow-md",
-    outline: "bg-transparent border-2 border-brand-pink text-brand-pink hover:bg-brand-light hover:border-[#d93695] hover:text-[#d93695]"
+    solid: "bg-brand-pink text-white hover:bg-[#d93695] hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 shadow-md focus:outline-none focus:ring-4 focus:ring-brand-pink/50 focus:ring-offset-2",
+    outline: "bg-transparent border-2 border-brand-pink text-brand-pink hover:bg-brand-light hover:border-[#d93695] hover:text-[#d93695] focus:outline-none focus:ring-4 focus:ring-brand-pink/50 focus:ring-offset-2"
   };
 
   const Component = href ? 'a' : 'button';
@@ -66,9 +66,9 @@ const AccordionItem = ({ question, answer }: { question: string; answer: React.R
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full text-left p-6 md:p-8 group"
       >
-        <h4 className="font-serif text-lg md:text-xl font-bold text-brand-dark group-hover:text-brand-pink transition-colors pr-8 leading-snug">
+        <h3 className="font-serif text-lg md:text-xl font-bold text-brand-dark group-hover:text-brand-pink transition-colors pr-8 leading-snug">
           {question}
-        </h4>
+        </h3>
         <div className={`transition-all duration-300 flex-shrink-0 ${isOpen ? 'rotate-180 text-brand-pink' : 'text-gray-400'}`}>
           <ChevronDown className="w-6 h-6" />
         </div>
@@ -86,6 +86,49 @@ const AccordionItem = ({ question, answer }: { question: string; answer: React.R
   );
 };
 
+const SpotifyFacade = ({ episodeUrl, title }: { episodeUrl: string; title: string }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const episodeId = episodeUrl.match(/episode\/([a-zA-Z0-9]+)/)?.[1] || '';
+  const embedUrl = `https://open.spotify.com/embed/episode/${episodeId}?utm_source=generator&theme=0`;
+
+  if (isLoaded) {
+    return (
+      <div className="w-full rounded-2xl overflow-hidden shadow-lg min-h-[152px] bg-gray-900">
+        <iframe
+          style={{ borderRadius: '16px', display: 'block', minHeight: '152px' }}
+          src={embedUrl}
+          width="100%"
+          height="152"
+          frameBorder="0"
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title={title}
+          className="w-full"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <button
+      onClick={() => setIsLoaded(true)}
+      className="w-full rounded-2xl overflow-hidden shadow-lg min-h-[152px] bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 transition-all duration-300 group relative"
+      aria-label={`Play ${title}`}
+    >
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl">
+          <Play className="w-8 h-8 text-white fill-white" />
+        </div>
+      </div>
+      <div className="absolute bottom-4 left-4 right-4">
+        <p className="text-white text-sm font-semibold opacity-90">{title}</p>
+      </div>
+    </button>
+  );
+};
+
 // --- Main App ---
 
 export default function App() {
@@ -98,6 +141,8 @@ export default function App() {
           <img
             src="https://cdn.gamma.app/tzl2sixgokxpy70/b2e25f6d4d954d9081b92467ac7de4b6/original/Podcast.png"
             alt="Love Story Podcasts"
+            width="56"
+            height="56"
             className="w-14 h-14 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer"
           />
         </a>
@@ -212,38 +257,16 @@ export default function App() {
               `}</style>
               <div className="flex gap-4 md:gap-6 px-4 md:px-6 pb-4" style={{ width: 'max-content' }}>
                 {[
-                  'https://open.spotify.com/episode/4ErSWLFukdmhWrUcZbslYp?si=9fFF8l8lQiqaBeKAnrTPlg',
-                  'https://open.spotify.com/episode/7DAN9RFVeY3seKPsg3a5uI?si=BXWICc6iSdai1ijQb9PbPA',
-                  'https://open.spotify.com/episode/3m5S113rBPmJOwfjWRfMpg?si=7IPy1TzoTIWbBp5IGS59Zw',
-                  'https://open.spotify.com/episode/4bOvJBvpMBUkMXbxaYGug0?si=gq9GZD6oSd66_cYXW28y4g',
-                  'https://open.spotify.com/episode/6eyrSqLiWtRxzkC9znAMuP?si=MyGXqPmOQLeXWDkfqExcqQ',
-                ].map((episodeUrl, index) => {
-                  // Extract episode ID from URL
-                  const episodeId = episodeUrl.match(/episode\/([a-zA-Z0-9]+)/)?.[1] || '';
-                  const embedUrl = `https://open.spotify.com/embed/episode/${episodeId}?utm_source=generator&theme=0`;
-                  
-                  return (
-                    <div
-                      key={index}
-                      className="flex-shrink-0 w-[85vw] sm:w-[400px] md:w-[450px]"
-                    >
-                      <div className="w-full rounded-2xl overflow-hidden shadow-lg min-h-[152px] bg-gray-900">
-                        <iframe
-                          style={{ borderRadius: '16px', display: 'block', minHeight: '152px' }}
-                          src={embedUrl}
-                          width="100%"
-                          height="152"
-                          frameBorder="0"
-                          allowFullScreen
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="eager"
-                          title={`Podcast Episode ${index + 1}`}
-                          className="w-full"
-                        ></iframe>
-                      </div>
-                    </div>
-                  );
-                })}
+                  { url: 'https://open.spotify.com/episode/4ErSWLFukdmhWrUcZbslYp?si=9fFF8l8lQiqaBeKAnrTPlg', title: 'Love at First Coffee' },
+                  { url: 'https://open.spotify.com/episode/7DAN9RFVeY3seKPsg3a5uI?si=BXWICc6iSdai1ijQb9PbPA', title: 'From Roommates to Soulmates' },
+                  { url: 'https://open.spotify.com/episode/3m5S113rBPmJOwfjWRfMpg?si=7IPy1TzoTIWbBp5IGS59Zw', title: 'The Park Bench Proposal' },
+                  { url: 'https://open.spotify.com/episode/4bOvJBvpMBUkMXbxaYGug0?si=gq9GZD6oSd66_cYXW28y4g', title: 'Dance Floor Romance' },
+                  { url: 'https://open.spotify.com/episode/6eyrSqLiWtRxzkC9znAMuP?si=MyGXqPmOQLeXWDkfqExcqQ', title: 'Across the Ocean Love' },
+                ].map((episode, index) => (
+                  <div key={index} className="flex-shrink-0 w-[85vw] sm:w-[400px] md:w-[450px]">
+                    <SpotifyFacade episodeUrl={episode.url} title={episode.title} />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -278,6 +301,8 @@ export default function App() {
                 <img
                   src="https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/firstreview.webp"
                   alt="Happy couple"
+                  width="350"
+                  height="350"
                   className="absolute inset-0 w-full h-full object-cover max-w-full"
                 />
               </div>
@@ -314,6 +339,8 @@ export default function App() {
                 <img
                   src="https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/secondreview.webp"
                   alt="Happy couple"
+                  width="350"
+                  height="350"
                   className="absolute inset-0 w-full h-full object-cover max-w-full"
                 />
               </div>
@@ -362,7 +389,7 @@ export default function App() {
                       <span className="font-serif text-2xl font-bold text-brand-pink">1</span>
                     </div>
                     <div>
-                      <h4 className="font-serif text-xl md:text-2xl font-bold mb-3 text-brand-dark">Share Your Story</h4>
+                      <h3 className="font-serif text-xl md:text-2xl font-bold mb-3 text-brand-dark">Share Your Story</h3>
                       <p className="text-brand-dark/80 leading-relaxed">
                         Tell us your story through a quick, fun questionnaire. Share your favorite moments and inside jokes. <strong>More details = more magic!</strong>
                       </p>
@@ -375,7 +402,7 @@ export default function App() {
                       <span className="font-serif text-2xl font-bold text-brand-pink">2</span>
                     </div>
                     <div>
-                      <h4 className="font-serif text-xl md:text-2xl font-bold mb-3 text-brand-dark">We Create Your Episode</h4>
+                      <h3 className="font-serif text-xl md:text-2xl font-bold mb-3 text-brand-dark">We Create Your Episode</h3>
                       <p className="text-brand-dark/80 leading-relaxed">
                         Our team transforms your memories into a polished 7-10 minute podcast. <strong>Authentic storytelling meets studio quality.</strong>
                       </p>
@@ -388,7 +415,7 @@ export default function App() {
                       <span className="font-serif text-2xl font-bold text-brand-pink">3</span>
                     </div>
                     <div>
-                      <h4 className="font-serif text-xl md:text-2xl font-bold mb-3 text-brand-dark">Delivered in 24 Hours</h4>
+                      <h3 className="font-serif text-xl md:text-2xl font-bold mb-3 text-brand-dark">Delivered in 24 Hours</h3>
                       <p className="text-brand-dark/80 leading-relaxed">
                         We'll send you a beautiful page featuring your podcast and custom album cover. Listen together or download to keep forever.
                       </p>
@@ -419,11 +446,11 @@ export default function App() {
               ].map((item, i) => (
                 <div key={i} className="group flex flex-col h-full bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-brand-pink/30 transition-all duration-300 w-full">
                   <div className="h-56 overflow-hidden relative w-full">
-                    <img src={item.img} alt={item.title} className="w-full h-full object-cover max-w-full transform group-hover:scale-110 transition-transform duration-500" />
+                    <img src={item.img} alt={item.title} width="384" height="224" className="w-full h-full object-cover max-w-full transform group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
-                    <h4 className="font-serif text-xl md:text-2xl font-bold mb-3 text-brand-dark">{item.title}</h4>
+                    <h3 className="font-serif text-xl md:text-2xl font-bold mb-3 text-brand-dark">{item.title}</h3>
                     <p className="text-base text-brand-dark/80 leading-relaxed">{item.text}</p>
                   </div>
                 </div>
@@ -446,7 +473,7 @@ export default function App() {
                 <div className="bg-gradient-to-br from-brand-light to-brand-pink/20 w-16 h-16 rounded-2xl flex items-center justify-center text-brand-pink mb-6 shadow-md">
                   <Bolt className="w-8 h-8" />
                 </div>
-                <h4 className="font-serif text-2xl font-bold mb-4 text-brand-dark">Lightning-Fast Delivery</h4>
+                <h3 className="font-serif text-2xl font-bold mb-4 text-brand-dark">Lightning-Fast Delivery</h3>
                 <p className="text-brand-dark/80 leading-relaxed">No waiting weeks for your gift. Order today and receive your custom episode in just 24 hours.</p>
               </div>
 
@@ -454,7 +481,7 @@ export default function App() {
                 <div className="bg-gradient-to-br from-brand-light to-brand-pink/20 w-16 h-16 rounded-2xl flex items-center justify-center text-brand-pink mb-6 shadow-md">
                   <Sparkles className="w-8 h-8" />
                 </div>
-                <h4 className="font-serif text-2xl font-bold mb-4 text-brand-dark">Truly One-of-a-Kind</h4>
+                <h3 className="font-serif text-2xl font-bold mb-4 text-brand-dark">Truly One-of-a-Kind</h3>
                 <p className="text-brand-dark/80 leading-relaxed">Your story is unique. No one else in the world will have this exact same gift. It's special just for you two.</p>
               </div>
 
@@ -462,7 +489,7 @@ export default function App() {
                 <div className="bg-gradient-to-br from-brand-light to-brand-pink/20 w-16 h-16 rounded-2xl flex items-center justify-center text-brand-pink mb-6 shadow-md">
                   <Smile className="w-8 h-8" />
                 </div>
-                <h4 className="font-serif text-2xl font-bold mb-4 text-brand-dark">Funny & Heartfelt</h4>
+                <h3 className="font-serif text-2xl font-bold mb-4 text-brand-dark">Funny & Heartfelt</h3>
                 <p className="text-brand-dark/80 leading-relaxed">Guaranteed to make you laugh or cry happy tears. If not, we'll refund you 100%. No questions asked.</p>
               </div>
             </div>
@@ -487,7 +514,7 @@ export default function App() {
                 <div className="inline-flex items-center gap-2 bg-brand-pink text-white px-6 py-2 rounded-full font-bold text-lg mb-4">
                   Save 20% Today
                 </div>
-                <h4 className="text-2xl font-serif font-semibold mb-3 text-brand-dark">Complete Custom Podcast Package</h4>
+                <h3 className="text-2xl font-serif font-semibold mb-3 text-brand-dark">Complete Custom Podcast Package</h3>
                 <p className="text-brand-dark/70 text-lg">One-time payment. No hidden costs. Ready in 24 hours.</p>
               </div>
 
@@ -498,7 +525,7 @@ export default function App() {
               </div>
 
               {/* What's Included */}
-              <h4 className="font-serif text-xl font-bold mb-6 text-center text-brand-dark">What's Included</h4>
+              <h3 className="font-serif text-xl font-bold mb-6 text-center text-brand-dark">What's Included</h3>
               <ul className="space-y-4 text-left">
                 {[
                   { title: "7-12 Minute Custom Episode", text: "Professional audio storytelling crafted just for you two" },
@@ -581,6 +608,8 @@ export default function App() {
                 <img
                   src="https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/lastimg.webp"
                   alt="Couple listening to podcast together"
+                  width="400"
+                  height="400"
                   className="absolute inset-0 w-full h-full object-cover max-w-full"
                 />
               </div>
@@ -628,6 +657,8 @@ export default function App() {
                     <img
                       src="https://cdn.gamma.app/tzl2sixgokxpy70/b2e25f6d4d954d9081b92467ac7de4b6/original/Podcast.png"
                       alt="Love Story Podcasts"
+                      width="40"
+                      height="40"
                       className="w-10 h-10 rounded-lg"
                     />
                     <span className="font-serif font-bold text-xl text-brand-dark">Love Story Podcasts</span>
@@ -639,7 +670,7 @@ export default function App() {
 
                 {/* Contact */}
                 <div className="text-center">
-                  <h4 className="font-serif font-bold text-brand-dark mb-4">Get in Touch</h4>
+                  <h3 className="font-serif font-bold text-brand-dark mb-4">Get in Touch</h3>
                   <p className="text-sm text-brand-dark/70 mb-2">Questions? We're here to help!</p>
                   <a href="mailto:hello@lovestorypodcasts.com" className="text-brand-pink hover:text-pink-600 font-semibold text-sm underline">
                     hello@lovestorypodcasts.com
@@ -648,7 +679,7 @@ export default function App() {
 
                 {/* Links */}
                 <div className="text-center md:text-right">
-                  <h4 className="font-serif font-bold text-brand-dark mb-4">Legal</h4>
+                  <h3 className="font-serif font-bold text-brand-dark mb-4">Legal</h3>
                   <div className="space-y-2">
                     <div>
                       <a href="https://gamma.app/docs/Terms-and-Conditions-mupxivi78lqxv4z" className="text-sm text-brand-dark/70 hover:text-brand-pink transition-colors">
