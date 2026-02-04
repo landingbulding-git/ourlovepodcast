@@ -35,13 +35,13 @@ const Button = ({
 };
 
 const Section = ({ children, className = '', id }: { children?: React.ReactNode; className?: string; id?: string }) => (
-  <section id={id} className={`w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24 ${className}`}>
+  <section id={id} className={`w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24 overflow-x-hidden ${className}`}>
     {children}
   </section>
 );
 
 const Card = ({ children, className = '' }: { children?: React.ReactNode; className?: string }) => (
-  <div className={`bg-white rounded-3xl p-8 md:p-12 lg:p-14 shadow-xl border border-gray-200 ${className}`}>
+  <div className={`bg-white rounded-3xl p-8 md:p-12 lg:p-14 shadow-xl border border-gray-200 w-full overflow-hidden ${className}`}>
     {children}
   </div>
 );
@@ -90,7 +90,7 @@ const AccordionItem = ({ question, answer }: { question: string; answer: React.R
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-cover bg-fixed bg-center font-sans text-brand-dark scroll-smooth" style={{ backgroundImage: "url('https://cdn.gamma.app/theme_images/prism-background.2232a16e.png?w=3707&q=70')" }}>
+    <div className="min-h-screen bg-cover bg-fixed bg-center font-sans text-brand-dark scroll-smooth overflow-x-hidden" style={{ backgroundImage: "url('https://cdn.gamma.app/theme_images/prism-background.2232a16e.png?w=3707&q=70')" }}>
 
       {/* Logo - Top Left */}
       <div className="fixed top-6 left-6 z-50">
@@ -103,7 +103,7 @@ export default function App() {
         </a>
       </div>
 
-      <main id="top" className="pt-16 md:pt-24 pb-20">
+      <main id="top" className="pt-16 md:pt-24 pb-20 w-full overflow-x-hidden">
         
         {/* Hero Section */}
         <Section className="text-center !pt-0">
@@ -185,7 +185,7 @@ export default function App() {
         {/* Testimonial 1 */}
         <Section>
           <Card>
-            <div className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-8 items-center w-full">
               <div>
                 <Badge icon={<Star className="w-3 h-3 fill-current text-yellow-400" />} text="Real Story" />
                 <div className="flex gap-1 text-yellow-400 mb-4">
@@ -207,11 +207,11 @@ export default function App() {
                   <Button href="https://tally.so/r/obRMGO">Create My Podcast Episode</Button>
                 </div>
               </div>
-              <div className="relative aspect-square md:aspect-auto md:h-full min-h-[350px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative aspect-square md:aspect-auto md:h-full min-h-[350px] rounded-2xl overflow-hidden shadow-lg w-full">
                 <img
                   src="https://cdn.gamma.app/tzl2sixgokxpy70/31c164ae599c4d3bba5d1795ec926061/original/CustomerReviewIMG1.webp"
                   alt="Happy couple"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover max-w-full"
                 />
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function App() {
         {/* Testimonial 2 */}
         <Section>
           <Card>
-            <div className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-8 items-center w-full">
               <div>
                 <Badge icon={<Star className="w-3 h-3 fill-current text-yellow-400" />} text="Real Story" />
                 <div className="flex gap-1 text-yellow-400 mb-4">
@@ -243,11 +243,11 @@ export default function App() {
                   <Button href="https://tally.so/r/obRMGO">Create My Podcast Episode</Button>
                 </div>
               </div>
-              <div className="relative aspect-square md:aspect-auto md:h-full min-h-[350px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative aspect-square md:aspect-auto md:h-full min-h-[350px] rounded-2xl overflow-hidden shadow-lg w-full">
                 <img
                   src="https://cdn.gamma.app/tzl2sixgokxpy70/143ea5fcdb6c43cd9cc0a57354799e41/original/CustomerReviewIMG2.webp"
                   alt="Happy couple"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover max-w-full"
                 />
               </div>
             </div>
@@ -299,12 +299,12 @@ export default function App() {
         {/* How It Works Section */}
         <Section id="how-it-works">
           <Card>
-            <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-10 md:gap-12">
-              <div className="relative rounded-2xl overflow-hidden min-h-[400px] shadow-xl order-2 md:order-1">
+            <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-10 md:gap-12 w-full">
+              <div className="relative rounded-2xl overflow-hidden min-h-[400px] shadow-xl order-2 md:order-1 w-full">
                 <img
                   src="https://cdn.gamma.app/tzl2sixgokxpy70/05487ff5e84849559ddd35bb4161fc89/original/pexels-photo-6883809.jpeg"
                   alt="Podcast Studio"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover max-w-full"
                 />
               </div>
               <div className="flex flex-col justify-center order-1 md:order-2">
@@ -375,9 +375,9 @@ export default function App() {
                 { title: 'Long-Distance Love', img: 'https://cdn.gamma.app/tzl2sixgokxpy70/c6016cda52684bb3b54c1edcc29c76b7/original/pexels-photo-5700202.jpeg', text: 'Feel close even when miles apart. Listen together or separately when you miss each other.' },
                 { title: 'Just Because', img: 'https://cdn.gamma.app/tzl2sixgokxpy70/5bae21865ae44f4e832e1c33177c83b0/original/pexels-photo-5493198.jpeg', text: 'The best surprises are unexpected. Remind them why you love them on any random day.' },
               ].map((item, i) => (
-                <div key={i} className="group flex flex-col h-full bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-brand-pink/30 transition-all duration-300">
-                  <div className="h-56 overflow-hidden relative">
-                    <img src={item.img} alt={item.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                <div key={i} className="group flex flex-col h-full bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-brand-pink/30 transition-all duration-300 w-full">
+                  <div className="h-56 overflow-hidden relative w-full">
+                    <img src={item.img} alt={item.title} className="w-full h-full object-cover max-w-full transform group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
@@ -536,12 +536,12 @@ export default function App() {
         {/* Final CTA Section */}
         <Section>
           <Card className="bg-gradient-to-br from-brand-light/40 to-white border-2 border-brand-pink/20">
-            <div className="grid grid-cols-1 md:grid-cols-[45%_55%] gap-10 md:gap-12 items-center">
-              <div className="order-2 md:order-1 relative rounded-2xl overflow-hidden min-h-[400px] shadow-2xl">
+            <div className="grid grid-cols-1 md:grid-cols-[45%_55%] gap-10 md:gap-12 items-center w-full">
+              <div className="order-2 md:order-1 relative rounded-2xl overflow-hidden min-h-[400px] shadow-2xl w-full">
                 <img
                   src="https://cdn.gamma.app/tzl2sixgokxpy70/df6388a3b3b14abd9f7d0a9b994565e0/original/Gemini_Generated_Image_n5pt1nn5pt1nn5pt.png"
                   alt="Couple listening to podcast together"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover max-w-full"
                 />
               </div>
               <div className="order-1 md:order-2">
