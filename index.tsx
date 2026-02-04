@@ -4,6 +4,7 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import PrivacyPolicy from './PrivacyPolicy';
+import TermsAndConditions from './TermsAndConditions';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -17,6 +18,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/termsandconditions" element={<TermsAndConditions />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
