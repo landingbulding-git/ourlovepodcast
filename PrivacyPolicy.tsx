@@ -45,8 +45,8 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-dark mb-4">1. DATA CONTROLLER & CONTACT</h2>
               <p className="text-lg leading-relaxed text-brand-dark/80">
                 The entity responsible for your data is Love Story Podcasts, located in Hungary. For any data-related inquiries or to exercise your rights, please contact us at{' '}
-                <a href="mailto:hello@lovestorypodcasts.com" className="text-brand-pink hover:text-pink-600 underline font-semibold">
-                  hello@lovestorypodcasts.com
+                <a href="mailto:privacy@ourlovepodcast.com" className="text-brand-pink hover:text-pink-600 underline font-semibold">
+                  privacy@ourlovepodcast.com
                 </a>
                 .
               </p>
@@ -177,8 +177,8 @@ export default function PrivacyPolicy() {
               </ul>
               <p className="text-lg leading-relaxed text-brand-dark/80 mt-4">
                 To exercise these rights, email{' '}
-                <a href="mailto:hello@lovestorypodcasts.com" className="text-brand-pink hover:text-pink-600 underline font-semibold">
-                  hello@lovestorypodcasts.com
+                <a href="mailto:privacy@ourlovepodcast.com" className="text-brand-pink hover:text-pink-600 underline font-semibold">
+                  privacy@ourlovepodcast.com
                 </a>
                 . We'll respond within 30 days.
               </p>
@@ -237,7 +237,7 @@ export default function PrivacyPolicy() {
               </p>
               <div className="mt-4 p-6 bg-brand-light/30 rounded-xl border border-brand-pink/20">
                 <p className="text-lg font-semibold text-brand-dark">Love Story Podcasts</p>
-                <p className="text-lg text-brand-dark/80">Email: <a href="mailto:hello@lovestorypodcasts.com" className="text-brand-pink hover:text-pink-600 underline font-semibold">hello@lovestorypodcasts.com</a></p>
+                <p className="text-lg text-brand-dark/80">Email: <a href="mailto:privacy@ourlovepodcast.com" className="text-brand-pink hover:text-pink-600 underline font-semibold">privacy@ourlovepodcast.com</a></p>
                 <p className="text-lg text-brand-dark/80">Location: Hungary</p>
               </div>
             </div>
