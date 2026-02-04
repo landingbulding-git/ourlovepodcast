@@ -6,12 +6,13 @@
   scroll-behavior: smooth;
 }
 
-html, body {
-  overflow-x: hidden;
+html {
   max-width: 100%;
 }
 
 body {
+  overflow-x: hidden;
+  max-width: 100%;
   font-family: 'Source Sans 3', sans-serif;
   color: #272525;
   -webkit-font-smoothing: antialiased;
