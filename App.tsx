@@ -696,7 +696,7 @@ export default function App() {
                   <h3 className="font-serif font-bold text-brand-dark mb-4">Legal</h3>
                   <div className="space-y-2">
                     <div>
-                      <a href="https://gamma.app/docs/Terms-and-Conditions-mupxivi78lqxv4z" className="text-sm text-brand-dark/70 hover:text-brand-pink transition-colors">
+                      <a href="/termsandconditions" className="text-sm text-brand-dark/70 hover:text-brand-pink transition-colors">
                         Terms & Conditions
                       </a>
                     </div>
