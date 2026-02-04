@@ -375,7 +375,7 @@ export default function App() {
                   Traditional gifts get used once and forgotten. But a custom podcast episode? <strong className="text-brand-dark">It becomes the soundtrack to your relationship.</strong>
                 </p>
                 <p>
-                  Two professional podcasters bring your story to life with warmth, humor, and genuine emotion. They'll laugh at your inside jokes, celebrate your milestones, and capture what makes your relationship beautifully yours.
+                  Our team brings your story to life with warmth, humor, and genuine emotion. Let's laugh together at your inside jokes, celebrate your milestones, and capture what makes your relationship beautifully yours.
                 </p>
               </div>
 
