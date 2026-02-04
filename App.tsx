@@ -670,12 +670,12 @@ export default function App() {
                   <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                     <img
                       src="https://cdn.gamma.app/tzl2sixgokxpy70/b2e25f6d4d954d9081b92467ac7de4b6/original/Podcast.png"
-                      alt="Love Story Podcasts"
+                      alt="Our Love Podcast"
                       width="40"
                       height="40"
                       className="w-10 h-10 rounded-lg"
                     />
-                    <span className="font-serif font-bold text-xl text-brand-dark">Love Story Podcasts</span>
+                    <span className="font-serif font-bold text-xl text-brand-dark">Our Love Podcast</span>
                   </div>
                   <p className="text-sm text-brand-dark/70 leading-relaxed">
                     Creating unforgettable audio memories for couples worldwide.
@@ -712,7 +712,7 @@ export default function App() {
               {/* Copyright */}
               <div className="border-t border-gray-200 pt-6 text-center">
                 <p className="text-sm text-brand-dark/50">
-                  © 2026 Love Story Podcasts. All rights reserved.
+                  © 2026 Our Love Podcast. All rights reserved.
                 </p>
               </div>
             </div>

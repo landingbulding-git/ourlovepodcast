@@ -36,7 +36,7 @@ export default function PrivacyPolicy() {
             {/* Introduction */}
             <div>
               <p className="text-lg leading-relaxed text-brand-dark/80">
-                Love Story Podcasts ("we," "us," or "the Business") is committed to protecting the deeply personal "Lore" and data you share with us. This policy explains how we collect, process, and protect your information.
+                Our Love Podcast ("we," "us," or "the Business") is committed to protecting the deeply personal "Lore" and data you share with us. This policy explains how we collect, process, and protect your information.
               </p>
             </div>
 
@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
             <div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-dark mb-4">1. DATA CONTROLLER & CONTACT</h2>
               <p className="text-lg leading-relaxed text-brand-dark/80">
-                The entity responsible for your data is Love Story Podcasts, located in Hungary. For any data-related inquiries or to exercise your rights, please contact us at{' '}
+                The entity responsible for your data is Our Love Podcast, located in Hungary. For any data-related inquiries or to exercise your rights, please contact us at{' '}
                 <a href="mailto:privacy@ourlovepodcast.com" className="text-brand-pink hover:text-pink-600 underline font-semibold">
                   privacy@ourlovepodcast.com
                 </a>
@@ -236,7 +236,7 @@ export default function PrivacyPolicy() {
                 For questions about this policy or your data:
               </p>
               <div className="mt-4 p-6 bg-brand-light/30 rounded-xl border border-brand-pink/20">
-                <p className="text-lg font-semibold text-brand-dark">Love Story Podcasts</p>
+                <p className="text-lg font-semibold text-brand-dark">Our Love Podcast</p>
                 <p className="text-lg text-brand-dark/80">Email: <a href="mailto:privacy@ourlovepodcast.com" className="text-brand-pink hover:text-pink-600 underline font-semibold">privacy@ourlovepodcast.com</a></p>
                 <p className="text-lg text-brand-dark/80">Location: Hungary</p>
               </div>

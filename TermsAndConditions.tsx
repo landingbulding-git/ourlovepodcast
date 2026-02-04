@@ -32,7 +32,7 @@ export default function TermsAndConditions() {
 
             <div>
               <p className="text-lg leading-relaxed text-brand-dark/80">
-                These Terms and Conditions ("Agreement") govern the relationship between you ("Customer") and Love Story Podcasts ("Business"), headquartered in Hungary. By purchasing a custom podcast episode ("Product"), you agree to the following:
+                These Terms and Conditions ("Agreement") govern the relationship between you ("Customer") and Our Love Podcast ("Business"), headquartered in Hungary. By purchasing a custom podcast episode ("Product"), you agree to the following:
               </p>
             </div>
 
