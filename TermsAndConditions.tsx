@@ -203,7 +203,7 @@ export default function TermsAndConditions() {
               </p>
               <div className="p-6 bg-brand-light/30 rounded-xl border border-brand-pink/20">
                 <p className="text-lg font-semibold text-brand-dark">Our Love Podcast</p>
-                <p className="text-lg text-brand-dark/80">Email: <a href="mailto:hello@ourlovepodcast.com" className="text-brand-pink hover:text-pink-600 underline font-semibold">hello@lovestorypodcasts.com</a></p>
+                <p className="text-lg text-brand-dark/80">Email: <a href="mailto:hello@ourlovepodcast.com" className="text-brand-pink hover:text-pink-600 underline font-semibold">hello@ourlovepodcast.com</a></p>
                 <p className="text-lg text-brand-dark/80">Location: Hungary</p>
               </div>
             </div>

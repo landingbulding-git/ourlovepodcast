@@ -651,7 +651,7 @@ export default function App() {
                     Create My Episode Now
                   </Button>
                   <p className="text-sm text-brand-dark/70">
-                    <strong>Need help?</strong> Email us anytime at <a href="mailto:hello@lovestorypodcasts.com" className="text-brand-pink underline">hello@lovestorypodcasts.com</a>
+                    <strong>Need help?</strong> Email us anytime at <a href="mailto:hello@ourlovepodcast.com" className="text-brand-pink underline">hello@ourlovepodcast.com</a>
                   </p>
                 </div>
               </div>
@@ -686,8 +686,8 @@ export default function App() {
                 <div className="text-center">
                   <h3 className="font-serif font-bold text-brand-dark mb-4">Get in Touch</h3>
                   <p className="text-sm text-brand-dark/70 mb-2">Questions? We're here to help!</p>
-                  <a href="mailto:hello@lovestorypodcasts.com" className="text-brand-pink hover:text-pink-600 font-semibold text-sm underline">
-                    hello@lovestorypodcasts.com
+                  <a href="mailto:hello@ourlovepodcast.com" className="text-brand-pink hover:text-pink-600 font-semibold text-sm underline">
+                    hello@ourlovepodcast.com
                   </a>
                 </div>
 
