@@ -90,7 +90,7 @@ const AccordionItem = ({ question, answer }: { question: string; answer: React.R
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-cover bg-fixed bg-center font-sans text-brand-dark scroll-smooth overflow-x-hidden" style={{ backgroundImage: "url('https://cdn.gamma.app/theme_images/prism-background.2232a16e.png?w=3707&q=70')" }}>
+    <div className="min-h-screen bg-cover bg-fixed bg-center font-sans text-brand-dark scroll-smooth overflow-x-hidden" style={{ backgroundImage: "url('https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/background.webp')" }}>
 
       {/* Logo - Top Left */}
       <div className="fixed top-6 left-6 z-50">
@@ -276,7 +276,7 @@ export default function App() {
               </div>
               <div className="relative aspect-square md:aspect-auto md:h-full min-h-[350px] rounded-2xl overflow-hidden shadow-lg w-full">
                 <img
-                  src="https://cdn.gamma.app/tzl2sixgokxpy70/31c164ae599c4d3bba5d1795ec926061/original/CustomerReviewIMG1.webp"
+                  src="https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/firstreview.webp"
                   alt="Happy couple"
                   className="absolute inset-0 w-full h-full object-cover max-w-full"
                 />
@@ -312,7 +312,7 @@ export default function App() {
               </div>
               <div className="relative aspect-square md:aspect-auto md:h-full min-h-[350px] rounded-2xl overflow-hidden shadow-lg w-full">
                 <img
-                  src="https://cdn.gamma.app/tzl2sixgokxpy70/143ea5fcdb6c43cd9cc0a57354799e41/original/CustomerReviewIMG2.webp"
+                  src="https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/secondreview.webp"
                   alt="Happy couple"
                   className="absolute inset-0 w-full h-full object-cover max-w-full"
                 />
@@ -412,10 +412,10 @@ export default function App() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { title: 'Anniversaries', img: 'https://cdn.gamma.app/tzl2sixgokxpy70/687a0307255a47e6bbc2ac1d39cd8c6f/original/pexels-photo-2950331.jpeg', text: 'Give a memory that keeps your whole story alive forever, not just another gift that gets forgotten.' },
-                { title: "Valentine's Day", img: 'https://cdn.gamma.app/tzl2sixgokxpy70/42f9184fd8654a2380d395bd9b566d34/original/pexels-photo-6765934.jpeg', text: 'Skip the cliché chocolates and flowers. Give something that shows how much you truly love them.' },
-                { title: 'Long-Distance Love', img: 'https://cdn.gamma.app/tzl2sixgokxpy70/c6016cda52684bb3b54c1edcc29c76b7/original/pexels-photo-5700202.jpeg', text: 'Feel close even when miles apart. Listen together or separately when you miss each other.' },
-                { title: 'Just Because', img: 'https://cdn.gamma.app/tzl2sixgokxpy70/5bae21865ae44f4e832e1c33177c83b0/original/pexels-photo-5493198.jpeg', text: 'The best surprises are unexpected. Remind them why you love them on any random day.' },
+                { title: 'Anniversaries', img: 'https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/anniversary.webp', text: 'Give a memory that keeps your whole story alive forever, not just another gift that gets forgotten.' },
+                { title: "Valentine's Day", img: 'https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/valentine.webp', text: 'Skip the cliché chocolates and flowers. Give something that shows how much you truly love them.' },
+                { title: 'Long-Distance Love', img: 'https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/long+distance.webp', text: 'Feel close even when miles apart. Listen together or separately when you miss each other.' },
+                { title: 'Just Because', img: 'https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/justbc.webp', text: 'The best surprises are unexpected. Remind them why you love them on any random day.' },
               ].map((item, i) => (
                 <div key={i} className="group flex flex-col h-full bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-brand-pink/30 transition-all duration-300 w-full">
                   <div className="h-56 overflow-hidden relative w-full">
@@ -579,7 +579,7 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-[45%_55%] gap-10 md:gap-12 items-center w-full">
               <div className="order-2 md:order-1 relative rounded-2xl overflow-hidden min-h-[400px] shadow-2xl w-full">
                 <img
-                  src="https://cdn.gamma.app/tzl2sixgokxpy70/df6388a3b3b14abd9f7d0a9b994565e0/original/Gemini_Generated_Image_n5pt1nn5pt1nn5pt.png"
+                  src="https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/lastimg.webp"
                   alt="Couple listening to podcast together"
                   className="absolute inset-0 w-full h-full object-cover max-w-full"
                 />
