@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Play, ChevronDown, ChevronUp, Bolt, Sparkles, Smile, StickyNote, Info } from 'lucide-react';
+import { Star, Play, ChevronDown, ChevronUp, Bolt, Sparkles, Smile, StickyNote, Info, Loader2 } from 'lucide-react';
 
 // --- Components ---
 
@@ -87,14 +87,39 @@ const AccordionItem = ({ question, answer }: { question: string; answer: React.R
 };
 
 const SpotifyFacade = ({ episodeUrl, title }: { episodeUrl: string; title: string }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
   const episodeId = episodeUrl.match(/episode\/([a-zA-Z0-9]+)/)?.[1] || '';
   const embedUrl = `https://open.spotify.com/embed/episode/${episodeId}?utm_source=generator&theme=0`;
 
+  const handleLoadStart = () => {
+    setIsLoading(true);
+    setIsLoaded(true);
+  };
+
+  // Prefetch on hover for faster loading
+  const handleMouseEnter = () => {
+    if (!isLoaded && !isLoading) {
+      // Start DNS lookup and connection
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = embedUrl;
+      document.head.appendChild(link);
+    }
+  };
+
   if (isLoaded) {
     return (
-      <div className="w-full rounded-2xl overflow-hidden shadow-lg min-h-[152px] bg-gray-900">
+      <div className="w-full rounded-2xl overflow-hidden shadow-lg min-h-[152px] bg-gray-900 relative">
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-900 z-10">
+            <div className="flex flex-col items-center gap-3">
+              <Loader2 className="w-10 h-10 text-green-500 animate-spin" />
+              <p className="text-white text-sm font-semibold">Loading Spotify player...</p>
+            </div>
+          </div>
+        )}
         <iframe
           style={{ borderRadius: '16px', display: 'block', minHeight: '152px' }}
           src={embedUrl}
@@ -103,9 +128,10 @@ const SpotifyFacade = ({ episodeUrl, title }: { episodeUrl: string; title: strin
           frameBorder="0"
           allowFullScreen
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
+          loading="eager"
           title={title}
           className="w-full"
+          onLoad={() => setIsLoading(false)}
         />
       </div>
     );
@@ -113,7 +139,8 @@ const SpotifyFacade = ({ episodeUrl, title }: { episodeUrl: string; title: strin
 
   return (
     <button
-      onClick={() => setIsLoaded(true)}
+      onClick={handleLoadStart}
+      onMouseEnter={handleMouseEnter}
       className="w-full rounded-2xl overflow-hidden shadow-lg min-h-[152px] bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 transition-all duration-300 group relative"
       aria-label={`Play ${title}`}
     >
