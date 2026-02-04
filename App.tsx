@@ -162,19 +162,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-cover bg-fixed bg-center font-sans text-brand-dark scroll-smooth overflow-x-hidden" style={{ backgroundImage: "url('https://ourlovepodcast.s3.eu-north-1.amazonaws.com/assets/background.webp')" }}>
 
-      {/* Logo - Top Left */}
-      <div className="fixed top-6 left-6 z-50">
-        <a href="#top">
-          <img
-            src="https://cdn.gamma.app/tzl2sixgokxpy70/b2e25f6d4d954d9081b92467ac7de4b6/original/Podcast.png"
-            alt="Love Story Podcasts"
-            width="56"
-            height="56"
-            className="w-14 h-14 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer"
-          />
-        </a>
-      </div>
-
       <main id="top" className="pt-16 md:pt-24 pb-20 w-full overflow-x-hidden">
         
         {/* Hero Section */}
