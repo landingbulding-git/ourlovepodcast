@@ -31,6 +31,9 @@ jobs:
         run: npm install
 
       - name: Build
+        env:
+          # GitHub Pages serves at /<repo-name>/, so assets must use that base
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
         run: npm run build
 
       - name: Setup Pages
