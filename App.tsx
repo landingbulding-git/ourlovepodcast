@@ -256,8 +256,8 @@ export default function App() {
 
         {/* Info & Audio Section */}
         <Section>
-          <div className="text-center max-w-4xl mx-auto">
-            <Card className="!p-10 md:!p-14 mb-10">
+          <Card className="!p-10 md:!p-14">
+            <div className="text-center max-w-4xl mx-auto">
               <Badge icon={<Play className="w-3 h-3" />} text="Hear The Magic" />
               <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-brand-dark leading-tight">
                 More Than a Gift—<br />A Memory You'll Replay Forever
@@ -270,33 +270,33 @@ export default function App() {
                   Two professional podcasters bring your story to life with warmth, humor, and genuine emotion. They'll laugh at your inside jokes, celebrate your milestones, and capture what makes your relationship beautifully yours.
                 </p>
               </div>
-            </Card>
 
-            {/* Spotify Player - Outside Card to remove white box */}
-            <div className="w-full max-w-2xl mx-auto mb-10">
-              <p className="text-base md:text-lg text-brand-dark/80 mb-4 text-center leading-relaxed">
-                Listen to an example or follow us on <a href="https://open.spotify.com/show/1rl1ujCcBtgMHCPLc2fpBK?si=YDCONhocQE-mWKET0YLMGA" className="text-brand-pink underline hover:text-pink-600 font-semibold">Spotify</a> for more.
-              </p>
-              <div className="w-full rounded-2xl overflow-hidden shadow-xl min-h-[152px] bg-gray-900">
-                <iframe
-                  style={{ borderRadius: '16px', display: 'block', minHeight: '152px' }}
-                  src="https://open.spotify.com/embed/episode/3m5S113rBPmJOwfjWRfMpg?utm_source=generator&theme=0"
-                  width="100%"
-                  height="152"
-                  frameBorder="0"
-                  allowFullScreen
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="eager"
-                  title="Sample Podcast Episode"
-                  className="w-full"
-                ></iframe>
+              {/* Spotify Player */}
+              <div className="w-full max-w-2xl mx-auto mb-10">
+                <p className="text-base md:text-lg text-brand-dark/80 mb-4 text-center leading-relaxed">
+                  Listen to an example or follow us on <a href="https://open.spotify.com/show/1rl1ujCcBtgMHCPLc2fpBK?si=YDCONhocQE-mWKET0YLMGA" className="text-brand-pink underline hover:text-pink-600 font-semibold">Spotify</a> for more.
+                </p>
+                <div className="w-full rounded-2xl overflow-hidden shadow-xl min-h-[152px] bg-gray-900">
+                  <iframe
+                    style={{ borderRadius: '16px', display: 'block', minHeight: '152px' }}
+                    src="https://open.spotify.com/embed/episode/3m5S113rBPmJOwfjWRfMpg?utm_source=generator&theme=0"
+                    width="100%"
+                    height="152"
+                    frameBorder="0"
+                    allowFullScreen
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="eager"
+                    title="Sample Podcast Episode"
+                    className="w-full"
+                  ></iframe>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <Button href="https://tally.so/r/obRMGO" className="shadow-lg">Create My Podcast Episode</Button>
               </div>
             </div>
-
-            <div className="flex justify-center">
-              <Button href="https://tally.so/r/obRMGO" className="shadow-lg">Create My Podcast Episode</Button>
-            </div>
-          </div>
+          </Card>
         </Section>
 
         {/* How It Works Section */}
