@@ -182,6 +182,73 @@ export default function App() {
           </div>
         </Section>
 
+        {/* Podcast Examples Section */}
+        <Section className="!py-8 md:!py-12">
+          <div className="w-full">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-4xl font-serif font-bold text-brand-dark mb-2">
+                Listen to Real Love Stories
+              </h2>
+              <p className="text-brand-dark/70 text-sm md:text-base">
+                Swipe to explore more episodes
+              </p>
+            </div>
+            
+            {/* Horizontal Scrollable Container */}
+            <div className="w-full overflow-x-auto overflow-y-hidden scrollbar-hide" style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch',
+              touchAction: 'pan-x',
+            }}>
+              <style>{`
+                .scrollbar-hide::-webkit-scrollbar {
+                  display: none;
+                }
+                .scrollbar-hide {
+                  -ms-overflow-style: none;
+                  scrollbar-width: none;
+                }
+              `}</style>
+              <div className="flex gap-4 md:gap-6 px-4 md:px-6 pb-4" style={{ width: 'max-content' }}>
+                {[
+                  'https://open.spotify.com/episode/4ErSWLFukdmhWrUcZbslYp?si=9fFF8l8lQiqaBeKAnrTPlg',
+                  'https://open.spotify.com/episode/7DAN9RFVeY3seKPsg3a5uI?si=BXWICc6iSdai1ijQb9PbPA',
+                  'https://open.spotify.com/episode/3m5S113rBPmJOwfjWRfMpg?si=7IPy1TzoTIWbBp5IGS59Zw',
+                  'https://open.spotify.com/episode/4bOvJBvpMBUkMXbxaYGug0?si=gq9GZD6oSd66_cYXW28y4g',
+                  'https://open.spotify.com/episode/6eyrSqLiWtRxzkC9znAMuP?si=MyGXqPmOQLeXWDkfqExcqQ',
+                ].map((episodeUrl, index) => {
+                  // Extract episode ID from URL
+                  const episodeId = episodeUrl.match(/episode\/([a-zA-Z0-9]+)/)?.[1] || '';
+                  const embedUrl = `https://open.spotify.com/embed/episode/${episodeId}?utm_source=generator&theme=0`;
+                  
+                  return (
+                    <div
+                      key={index}
+                      className="flex-shrink-0 w-[85vw] sm:w-[400px] md:w-[450px]"
+                    >
+                      <div className="w-full rounded-2xl overflow-hidden shadow-lg min-h-[152px] bg-gray-900">
+                        <iframe
+                          style={{ borderRadius: '16px', display: 'block', minHeight: '152px' }}
+                          src={embedUrl}
+                          width="100%"
+                          height="152"
+                          frameBorder="0"
+                          allowFullScreen
+                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                          loading="eager"
+                          title={`Podcast Episode ${index + 1}`}
+                          className="w-full"
+                        ></iframe>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </Section>
+
         {/* Testimonial 1 */}
         <Section>
           <Card>
