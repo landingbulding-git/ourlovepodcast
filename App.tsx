@@ -341,9 +341,9 @@ export default function App() {
               {/* Spotify Player */}
               <div className="w-full max-w-2xl mx-auto mb-10">
                 <p className="text-base md:text-lg text-brand-dark/80 mb-4 text-center leading-relaxed">
-                  Listen to an example or follow us on <a href="https://open.spotify.com/show/1rl1ujCcBtgMHCPLc2fpBK?si=YDCONhocQE-mWKET0YLMGA" className="text-brand-pink underline hover:text-pink-600 font-semibold">Spotify</a> for more.
+                  Listen to an example or follow us on Spotify for more.
                 </p>
-                <div className="w-full rounded-2xl overflow-hidden shadow-xl min-h-[152px] bg-gray-900">
+                <div className="w-full rounded-2xl overflow-hidden shadow-xl min-h-[152px] bg-gray-900 mb-6">
                   <iframe
                     style={{ borderRadius: '16px', display: 'block', minHeight: '152px' }}
                     src="https://open.spotify.com/embed/episode/3m5S113rBPmJOwfjWRfMpg?utm_source=generator&theme=0"
@@ -354,6 +354,20 @@ export default function App() {
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="eager"
                     title="Sample Podcast Episode"
+                    className="w-full"
+                  ></iframe>
+                </div>
+                <div className="w-full rounded-2xl overflow-hidden shadow-xl min-h-[232px] bg-gray-900">
+                  <iframe
+                    style={{ borderRadius: '16px', display: 'block', minHeight: '232px' }}
+                    src="https://open.spotify.com/embed/show/1rl1ujCcBtgMHCPLc2fpBK?utm_source=generator&theme=0"
+                    width="100%"
+                    height="232"
+                    frameBorder="0"
+                    allowFullScreen
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="eager"
+                    title="Love Story Podcasts on Spotify"
                     className="w-full"
                   ></iframe>
                 </div>
@@ -369,15 +383,8 @@ export default function App() {
         {/* How It Works Section */}
         <Section id="how-it-works">
           <Card>
-            <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-10 md:gap-12 w-full">
-              <div className="relative rounded-2xl overflow-hidden min-h-[400px] shadow-xl order-2 md:order-1 w-full">
-                <img
-                  src="https://cdn.gamma.app/tzl2sixgokxpy70/05487ff5e84849559ddd35bb4161fc89/original/pexels-photo-6883809.jpeg"
-                  alt="Podcast Studio"
-                  className="absolute inset-0 w-full h-full object-cover max-w-full"
-                />
-              </div>
-              <div className="flex flex-col justify-center order-1 md:order-2">
+            <div className="w-full">
+              <div className="flex flex-col justify-center">
                 <Badge icon={<StickyNote className="w-3 h-3" />} text="Simple Process" />
                 <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12 text-brand-dark leading-tight">
                   How Your Story Becomes a Podcast
@@ -526,28 +533,26 @@ export default function App() {
               </div>
 
               {/* What's Included */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 p-8 text-left">
-                <h4 className="font-serif text-xl font-bold mb-6 text-center text-brand-dark">What's Included</h4>
-                <ul className="space-y-4">
-                  {[
-                    { title: "7-12 Minute Custom Episode", text: "Professional audio storytelling crafted just for you two" },
-                    { title: "Professional Scriptwriting", text: "Our writers transform your memories into an engaging narrative" },
-                    { title: "Studio-Quality Production", text: "Sounds like a real podcast you'd hear on Spotify or Apple" },
-                    { title: "24-Hour Delivery", text: "Order today, receive your beautiful episode tomorrow" },
-                    { title: "Custom Album Cover", text: "Beautiful artwork to match your unique love story" },
-                    { title: "Yours Forever", text: "Download and replay as many times as you want" },
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-4">
-                      <span className="flex-shrink-0 w-6 h-6 bg-brand-pink/10 rounded-full flex items-center justify-center mt-0.5">
-                        <span className="text-brand-pink text-lg">✓</span>
-                      </span>
-                      <p className="text-brand-dark/90">
-                        <span className="font-bold text-brand-dark">{item.title}:</span> {item.text}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <h4 className="font-serif text-xl font-bold mb-6 text-center text-brand-dark">What's Included</h4>
+              <ul className="space-y-4 text-left">
+                {[
+                  { title: "7-12 Minute Custom Episode", text: "Professional audio storytelling crafted just for you two" },
+                  { title: "Professional Scriptwriting", text: "Our writers transform your memories into an engaging narrative" },
+                  { title: "Studio-Quality Production", text: "Sounds like a real podcast you'd hear on Spotify or Apple" },
+                  { title: "24-Hour Delivery", text: "Order today, receive your beautiful episode tomorrow" },
+                  { title: "Custom Album Cover", text: "Beautiful artwork to match your unique love story" },
+                  { title: "Yours Forever", text: "Download and replay as many times as you want" },
+                ].map((item, i) => (
+                  <li key={i} className="flex gap-4">
+                    <span className="flex-shrink-0 w-6 h-6 bg-brand-pink/10 rounded-full flex items-center justify-center mt-0.5">
+                      <span className="text-brand-pink text-lg">✓</span>
+                    </span>
+                    <p className="text-brand-dark/90">
+                      <span className="font-bold text-brand-dark">{item.title}:</span> {item.text}
+                    </p>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Scarcity Note - Improved */}
