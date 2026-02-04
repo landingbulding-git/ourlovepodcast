@@ -338,41 +338,6 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Spotify Player */}
-              <div className="w-full max-w-2xl mx-auto mb-10">
-                <p className="text-base md:text-lg text-brand-dark/80 mb-4 text-center leading-relaxed">
-                  Listen to an example or follow us on Spotify for more.
-                </p>
-                <div className="w-full rounded-2xl overflow-hidden shadow-xl min-h-[152px] bg-gray-900 mb-6">
-                  <iframe
-                    style={{ borderRadius: '16px', display: 'block', minHeight: '152px' }}
-                    src="https://open.spotify.com/embed/episode/3m5S113rBPmJOwfjWRfMpg?utm_source=generator&theme=0"
-                    width="100%"
-                    height="152"
-                    frameBorder="0"
-                    allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="eager"
-                    title="Sample Podcast Episode"
-                    className="w-full"
-                  ></iframe>
-                </div>
-                <div className="w-full rounded-2xl overflow-hidden shadow-xl min-h-[232px] bg-gray-900">
-                  <iframe
-                    style={{ borderRadius: '16px', display: 'block', minHeight: '232px' }}
-                    src="https://open.spotify.com/embed/show/1rl1ujCcBtgMHCPLc2fpBK?utm_source=generator&theme=0"
-                    width="100%"
-                    height="232"
-                    frameBorder="0"
-                    allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="eager"
-                    title="Love Story Podcasts on Spotify"
-                    className="w-full"
-                  ></iframe>
-                </div>
-              </div>
-
               <div className="flex justify-center">
                 <Button href="https://tally.so/r/obRMGO" className="shadow-lg">Create My Podcast Episode</Button>
               </div>
