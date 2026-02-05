@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import PrivacyPolicy from './PrivacyPolicy';
 import TermsAndConditions from './TermsAndConditions';
+import ThankYou from './ThankYou';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -19,6 +20,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/termsandconditions" element={<TermsAndConditions />} />
+        <Route path="/thankyou" element={<ThankYou />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
