@@ -20,7 +20,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/termsandconditions" element={<TermsAndConditions />} />
-        <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/thanks" element={<ThankYou />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
